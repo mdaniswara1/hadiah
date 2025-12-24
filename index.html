@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A Special Gift for You</title>
+  <style>
+    body {
+      margin: 0;
+      font-family:'Times New Roman', Times, serif;
+      background: radial-gradient(circle at top, #ffe6eb, #ffa2b8);
+      color: #333;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    .card {
+      background: white;
+      max-width: 720px;
+      width: 92%;
+      border-radius: 24px;
+      box-shadow: 0 30px 60px rgba(0,0,0,0.2);
+      overflow: hidden;
+      text-align: center;
+      padding-bottom: 32px;
+      position: relative;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, rgba(238,156,167,0.15), rgba(255,221,225,0.15));
+      pointer-events: none;
+    }
+
+    .header {
+      padding: 36px 24px 16px;
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 2.3rem;
+      letter-spacing: 0.5px;
+    }
+
+    .header p {
+      margin-top: 8px;
+      font-size: 1rem;
+      opacity: 0.8;
+    }
+
+    .closed {
+      padding: 70px 20px;
+      animation: floatIn 1.2s ease forwards;
+    }
+
+    .gift-box {
+      font-size: 6rem;
+      cursor: pointer;
+      display: inline-block;
+      transition: transform 0.3s ease, filter 0.3s ease;
+      animation: pulse 2s infinite;
+    }
+
+    .gift-box:hover {
+      transform: scale(1.15) rotate(-3deg);
+      filter: drop-shadow(0 12px 20px rgba(238,156,167,0.6));
+    }
+
+    .hint {
+      margin-top: 18px;
+      font-size: 1.05rem;
+      opacity: 0.75;
+    }
+
+    .video-section {
+      display: none;
+      animation: reveal 1.2s ease forwards;
+    }
+
+    .video-container {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%;
+      margin-top: 20px;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    }
+
+    .video-container video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .message {
+      padding: 26px 34px;
+      font-size: 1.1rem;
+      line-height: 1.7;
+      animation: fadeUp 1.4s ease forwards;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.08); }
+    }
+
+    @keyframes reveal {
+      from { opacity: 0; transform: scale(0.96); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(14px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes floatIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="header">
+      <h1>FOR BIA</h1>
+      <p>HBD BIBINGG cie makin tua wkwkwk mungkin gua gabisa ngasih hadiah gimana gimana tapi ini hadiah dari gua untuk bibing</p>
+      <p>enjoy😉</p>
+    </div>
+
+    <div class="closed" id="closedBox" onclick="openGift()">
+      <div class="gift-box">🐥</div>
+      <div class="hint">Click the baby duck to open your gift!</div>
+    </div>
+
+    <div class="video-section" id="videoSection">
+      <div class="video-container">
+        <video controls autoplay>
+          <source src="gift-video.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
+      <div class="message">
+        <p>
+          walaupun ga seberapa dan bentar doang videonya semoga
+          ngebekas yah hehehe
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function openGift() {
+const closed = document.getElementById('closedBox');
+const section = document.getElementById('videoSection');
+const video = document.getElementById('giftVideo');
+
+
+closed.style.display = 'none';
+section.style.display = 'block';
+
+
+
+}
+  </script>
+</body>
+</html>
